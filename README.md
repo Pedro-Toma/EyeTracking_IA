@@ -4,6 +4,14 @@ Este projeto implementa um sistema de **Gaze Tracking** (rastreamento do olhar) 
 
 ---
 
+## Integrantes
+
+Nomes:                                         RA: 
+      Gabriel Fuentes de Freitas Yamashita        10408876
+      Guilherme Florio Vieira                     10409698
+      Henrique Nellessen                          10388168
+      Pedro Akira Cardoso Toma                    10390171
+
 ## 🚀 Tecnologias e Arquitetura
 
 | Componente | Função | Tecnologias Chave |
@@ -63,3 +71,4 @@ Para executar a aplicação localmente, siga os passos abaixo (assumindo que voc
     streamlit run main.py
     ```
     *(A aplicação abrirá automaticamente no seu navegador.)*
+
