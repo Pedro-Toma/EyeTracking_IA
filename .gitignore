@@ -8,16 +8,6 @@ data/MPIIGaze/
 # Dados de calibração que serão gerados em tempo real no Streamlit
 data/calibration_data/
 
-# Arquivos de modelo (weights/pesos) grandes que devem ser gerenciados pelo Git LFS
-# Deixe este arquivo aqui, mas use o Git LFS para rastreá-lo (veja a dica abaixo)
-models/*.h5
-models/*.pth
-models/*.pt
-
-# =========================================================
-# 2. Ambiente Virtual e Temporários
-# =========================================================
-
 # Pasta do ambiente virtual Python
 venv/
 .venv/
@@ -29,10 +19,6 @@ __pycache__/
 # Arquivos de cache e logs do Streamlit
 .streamlit/
 logs/
-
-# =========================================================
-# 3. Notebooks e Ambientes de IDE (Opcional, mas útil)
-# =========================================================
 
 # Arquivos de cache do Jupyter
 .ipynb_checkpoints/
