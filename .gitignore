@@ -1,12 +1,5 @@
-# =========================================================
-# 1. Pastas e Arquivos de Dados Grandes (NÃO ENVIAR!)
-# =========================================================
-
 # O dataset MPIIGaze completo (é muito grande)
 data/MPIIGaze/
-
-# Dados de calibração que serão gerados em tempo real no Streamlit
-data/calibration_data/
 
 # Pasta do ambiente virtual Python
 venv/
