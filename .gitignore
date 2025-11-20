@@ -1,11 +1,11 @@
-# O dataset MPIIGaze completo (é muito grande)
+# O dataset MPIIGaze completo 
 data/MPIIGaze/
 
-# Pasta do ambiente virtual Python
+# Ambiente virtual
 venv/
 .venv/
 
-# Arquivos de cache do Python
+# Arquivos de cache
 __pycache__/
 *.pyc
 
