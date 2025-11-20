@@ -40,8 +40,9 @@ Para executar a aplicação, siga os passos abaixo:
 **1. Instale Python 3.11.9**  
    [Python 3.11.9](https://www.python.org/downloads/release/python-3119/)
    
-**2. Clone o Repositório**
+**2. Clone o Repositório** (em uma pasta local)
    ```bash
+   git init
    git clone https://github.com/Pedro-Toma/EyeTracking_IA.git
    cd EyeTracking_IA
    ```
@@ -71,4 +72,5 @@ Para executar a aplicação, siga os passos abaixo:
 
 ## 📄 Artigo do Projeto
    [Artigo](https://github.com/Pedro-Toma/EyeTracking_IA/blob/main/Artigo_IA_Eye_Tracking.pdf)
+
 
