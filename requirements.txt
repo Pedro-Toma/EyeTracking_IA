@@ -1,21 +1,15 @@
-# Pacotes de Machine Learning e Visão Computacional
+# ML (Keras incluso)
 tensorflow==2.16.1
-# O Keras está incluído no TensorFlow 2.x
+
 numpy
 pandas
 opencv-python
 
 # Pacotes para a Aplicação Web em Tempo Real
 streamlit==1.34.0
-# Para usar a webcam do Streamlit em tempo real com baixa latência
 streamlit-webrtc==0.49.0
-# Para lidar com a leitura de dados do MPIIGaze (.mat files)
-scipy
 
-# Pacotes para manipulação de dados auxiliares (opcional, mas útil)
+
+# Pacotes para manipulação de dados auxiliares
 scikit-learn
 matplotlib
-
-###
-torch
-torchvision

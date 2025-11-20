@@ -20,7 +20,7 @@ class GazeModelProcessor:
 
     def _load_model(self):
         try:
-            # Assumindo que o arquivo .h5 está no diretório 'models/'
+            # pega o caminho e carrega o modelo
             script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
             model_path_full = os.path.join(script_dir, MODEL_PATH)
 
@@ -34,7 +34,6 @@ class GazeModelProcessor:
     def _load_haar_cascade(self):
         try:
             # Carrega o detector de face do OpenCV (Haar Cascade)
-            # O caminho padrão geralmente funciona se o OpenCV estiver instalado corretamente.
             haar_path = os.path.join(cv2.data.haarcascades, 'haarcascade_frontalface_default.xml')
             if not os.path.exists(haar_path):
                  print(f"ATENÇÃO: Arquivo Haar Cascade não encontrado em: {haar_path}")
@@ -56,8 +55,7 @@ class GazeModelProcessor:
         h, w, _ = full_frame.shape
         gray = cv2.cvtColor(full_frame, cv2.COLOR_BGR2GRAY)
         
-        # 1. DETECÇÃO DE FACE (Haar Cascade)
-        # Parâmetros ajustados para robustez (scaleFactor=1.1, minNeighbors=5)
+        # Detecção de face usando Haar Cascade
         faces = self.face_cascade.detectMultiScale(gray, 1.1, 5, minSize=(30, 30))
 
         if len(faces) == 0:
@@ -66,7 +64,7 @@ class GazeModelProcessor:
         # Escolhe a primeira face detectada
         (x, y, fw, fh) = faces[0]
 
-        # Define o bounding box para o corte
+        # Define a caixa para o corte
         margin = 30
         x_min, y_min = int(max(0, x - margin)), int(max(0, y - margin))
         x_max, y_max = int(min(w, x + fw + margin)), int(min(h, y + fh + margin))
@@ -77,17 +75,16 @@ class GazeModelProcessor:
         if face_img.size == 0:
             return None, None
 
-        # 2. PRÉ-PROCESSAMENTO E INFERÊNCIA
+        # Redimensiona a imagem
         input_img = cv2.resize(face_img, (self.image_size, self.image_size))
-        # Normalização (conforme esperado pelo seu modelo MobileNet)
+        # Normaliza a imagem
         input_img = input_img.astype(np.float32) / 255.0
         input_tensor = np.expand_dims(input_img, axis=0)
         
-        # INFERÊNCIA
+        # Previsão do modelo
         predictions = self.model.predict(input_tensor, verbose=0)[0]
         
-        # 3. PÓS-PROCESSAMENTO
-        # Seu modelo retorna coordenadas normalizadas (0 a 1)
+        # armazena as coordenadas do modelo
         normalized_x, normalized_y = predictions[0], predictions[1]
         
         # Converte para a resolução da webcam/visualização (640x480)
