@@ -70,4 +70,5 @@ Para executar a aplicação, siga os passos abaixo:
    [Vídeo](https://youtu.be/erq2BtiPR7c)
 
 ## 📄 Artigo do Projeto
-   [Artigo]()
+   [Artigo](https://github.com/Pedro-Toma/EyeTracking_IA/blob/main/Artigo_IA_Eye_Tracking.pdf)
+
